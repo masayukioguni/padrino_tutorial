@@ -12,6 +12,7 @@ Admin.controllers :posts do
 
   post :create do
     @post = Post.new(params[:post])
+    @post.account = current_account
     if @post.save
       flash[:notice] = 'Post was successfully created.'
       redirect url(:posts, :edit, :id => @post.id)
