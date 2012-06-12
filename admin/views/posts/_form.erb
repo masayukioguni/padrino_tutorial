@@ -9,9 +9,14 @@
   <span class="description">Ex: a simple text</span>
 </div>
 <div class="group">
-  <%= f.label :account_id %><%= f.error_message_on :account_id %>
-  <%= f.text_field :account_id, :class => :text_field %>
-  <span class="description">Ex: a simple text</span>
+<!--  <%= f.label :account_id %><%= f.error_message_on :account_id %> -->
+<!--  <%= f.text_field :account_id, :class => :text_field %> -->
+<!--  <span class="description">Ex: a simple text</span> -->
+  <select id="post_account_id" name="post[account_id]">
+  <%@accounts.each do |account| %>
+    <option value="<%= account.id %>" <% if @select_account_id == account.id %> selected <% end %>> <%= account.name %></option>
+  <% end %>
+  </select>
 </div>
 
 <div class="group navform wat-cf">
