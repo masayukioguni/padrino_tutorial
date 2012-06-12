@@ -8,6 +8,11 @@
   <%= f.text_area :body, :class => :text_area %>
   <span class="description">Ex: a simple text</span>
 </div>
+<div class="group">
+  <%= f.label :account_id %><%= f.error_message_on :account_id %>
+  <%= f.text_field :account_id, :class => :text_field %>
+  <span class="description">Ex: a simple text</span>
+</div>
 
 <div class="group navform wat-cf">
   <%= f.submit pat(:save), :class => :button %>
