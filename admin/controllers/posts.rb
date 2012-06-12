@@ -11,6 +11,7 @@ Admin.controllers :posts do
   end
 
   post :create do
+    p params[:post]
     @post = Post.new(params[:post])
     @post.account = current_account
     if @post.save
