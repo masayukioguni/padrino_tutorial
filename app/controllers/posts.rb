@@ -28,4 +28,14 @@ PadrinoTutorial.controllers :posts do
     render 'posts/show'
   end
   
+  post :create do
+    p params
+    @post = Post.new(params)
+    @post.account_id = 2
+    if @post.save
+       p 'success'
+    else
+      render 'posts/index'
+    end
+  end
 end

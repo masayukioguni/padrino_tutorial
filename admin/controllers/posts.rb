@@ -13,6 +13,7 @@ Admin.controllers :posts do
   end
 
   post :create do
+    p params[:post]
     @post = Post.new(params[:post])
     p params[:post]
     @accounts = Account.all
