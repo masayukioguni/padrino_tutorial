@@ -1,8 +1,11 @@
 require 'spec_helper'
 
-describe "Post Model" do
-  let(:post) { Post.new }
-  it 'can be created' do
-    post.should_not be_nil
+describe Post do
+  it "Test" do
+   @post = Factory.build(:post)
+   @post.save.should be_true
+
   end
+  #subject { FactoryGirl.build(:post) }
 end
+
