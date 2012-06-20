@@ -13,8 +13,13 @@ describe Author do
       before { @author = FactoryGirl.build(:author, name: 'a' * 30) }
       it { should be_valid }
     end
+    context '> 30' do
+      before { @author = FactoryGirl.build(:author, name: 'a' * 31) }
+      it { should_not be_valid }
+    end
   end
 end
+
 
 describe "Author Model" do
   let(:author) { Author.new }
