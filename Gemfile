@@ -21,6 +21,7 @@ gem 'rack-test', :require => "rack/test", :group => "test"
 gem 'faker'
 gem 'faker-japanese', :require => 'faker/japanese'
 gem 'factory_girl'
+gem 'random_data'
 
 # Padrino Stable Gem
 gem 'padrino', '0.10.6'
