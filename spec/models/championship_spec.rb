@@ -39,5 +39,7 @@ describe "Championship Model" do
     record.should be_true
   end
 
-
+  after do
+    Championship.delete_all
+  end
 end
