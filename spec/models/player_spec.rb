@@ -28,11 +28,15 @@ describe "Player Model" do
     record.name.should == "コクリコ坂から"
   end
 
-  it "null update null" do
+  it "name null update == false " do
     record_src = Player.find(:first)
-    Player.update(:first,:name => nil)
-    record_dst = Player.find(:first)
-    record_src.name.should == record_dst.name
+    record_src.name = nil
+    false == record_src.save()
+  end
+
+  it "name null create == false " do
+    player = FactoryGirl.build(:player,:name => nil)
+    player.save.should be_false
   end
 
   it "insert" do
