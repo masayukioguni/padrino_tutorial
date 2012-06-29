@@ -28,10 +28,11 @@ describe "Player Model" do
     record.name.should == "コクリコ坂から"
   end
 
-  it "update null" do
+  it "null update null" do
+    record_src = Player.find(:first)
     Player.update(:first,:name => nil)
-    record = Player.find(:first)
-    record.name.should == nil
+    record_dst = Player.find(:first)
+    record_src.name.should == record_dst.name
   end
 
   it "insert" do
